@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="animate__animated animate__bounceInRight animate__faster">
+    <div class="row">
+      <div class="col-12">
+        <h1>
+          Pokemón: <small>{{ pokeInfo.nombre }}</small>
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <img src="{{ pokeInfo.imagen }}" class="card-img" alt="pokemon" />
+      </div>
+      <div class="col">
+        <h3>DETALLES  </h3>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>altura : </strong> {{ pokeInfo.altura }} m
+            <strong>nombre : </strong> {{ pokeInfo.nombre }}
+            <strong>peso : </strong> {{ pokeInfo.peso }} kg
+            <strong>tipos : </strong> {{ pokeInfo.tipos }}
+          </li>
+        </ul>
+        <hr>
+        <h3>STATS</h3>
+        <hr>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Ataque : </strong> {{ pokeStats.attack }}
+            <strong>defensa : </strong> {{ pokeStats.defense }}
+            <strong>hp : </strong> {{  pokeStats.hp }}
+            <strong>ataque especial : </strong> {{  pokeStats.special_attack }}
+            <strong>defensa especial : </strong> {{  pokeStats.special_defense }}
+            <strong>velocidad : </strong> {{  pokeStats.speed }}
+          </li>
+        </ul>
+        <hr>
+        <h3>DEBILIDAD</h3>
+        <ul class="list-group">
+          <li *ngFor="let item of pokedebilidades; let i = index" class="list-group-item">
+            <strong>Debilidad {{i+1}} : </strong> {{ item }}
+           
+          </li>
+        </ul>
+        
+
+        <h2 class="mt-3">CADENA EVOLUTIVA</h2>
+        <hr>
+        <div class="card-group">
+            
+           
+          <div *ngFor="let evolution of pokeCadena" class="card">
+            <img src="{{ evolution.imagen }}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{ evolution.nombre }}</h5>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <h3>Movimientos</h3>
+        <ul class="list-group">
+          <li *ngFor="let item of pokemoves; let i = index" class="list-group-item">
+            <strong>Movimiento {{i}} : </strong> {{ item }}
+           
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</div>

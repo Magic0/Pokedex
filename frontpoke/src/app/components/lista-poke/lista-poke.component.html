@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="mb-4">
+  <button  (click)="agregarTipo('Normal')" type="button" class="btn mb-2 btn-primary mx-3">Normal</button>
+  <button  (click)="agregarTipo('Fighting')" type="button" class="btn mb-2 btn-secondary mx-3">Fighting</button>
+  <button  (click)="agregarTipo('Flying')"  type="button" class="btn mb-2 btn-success mx-3">Flying</button>
+  <button  (click)="agregarTipo('Poison')"  type="button" class="btn mb-2 btn-danger mx-3">Poison</button>
+  <button  (click)="agregarTipo('Ground')"  type="button" class="btn mb-2 btn-warning mx-3">Ground</button>
+  <button  (click)="agregarTipo('Rock')"  type="button" class="btn mb-2 btn-info mx-3">Rock</button>
+  <button  (click)="agregarTipo('Bug')"  type="button" class="btn mb-2 btn-dark mx-3">Bug</button>
+  <button  (click)="agregarTipo('Ghost')"  type="button" class="btn mb-2 btn-primary mx-3">Ghost</button>
+  <button  (click)="agregarTipo('Steel')"  type="button" class="btn mb-2 btn-secondary mx-3">Steel</button>
+  <button  (click)="agregarTipo('Fire')"  type="button" class="btn mb-2 btn-success mx-3">Fire</button>
+  <button  (click)="agregarTipo('Water')"  type="button" class="btn mb-2 btn-warning mx-3">Water</button>
+  <button  (click)="agregarTipo('Grass')"  type="button" class="btn mb-2 btn-dark mx-3">Grass</button>
+  <button  (click)="agregarTipo('Electric')"  type="button" class="btn mb-2 btn-info mx-3">Electric</button>
+  <button  (click)="agregarTipo('Psichic')"  type="button" class="btn mb-2 btn-primary mx-3">Psichic</button>
+  <button  (click)="agregarTipo('Ice')"  type="button" class="btn mb-2 btn-dark mx-3">Ice</button>
+  <button  (click)="agregarTipo('Dragon')"  type="button" class="btn mb-2 btn-secondary mx-3">Dragon</button>
+  <button  (click)="agregarTipo('Dark')"  type="button" class="btn mb-2 btn-danger mx-3">Dark</button>
+  <button  (click)="agregarTipo('Fairy')"  type="button" class="btn mb-2 btn-dark mx-3">Fairy</button>
+</div>
+
+
+<h2>Tipos elegidos :  </h2>  <h3 >{{arregloTipos|json}} </h3>
+<hr />
+
+
+<div ng class="row row-cols-1 row-cols-md-4 g-4">
+  <div *ngFor="let poke of pokemones" class="col">
+    <div class="card">
+      <img src="{{poke.imagen}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{poke.nombre}}</h5>
+        <button (click)="viajar(poke.nombre)"   class="btn btn-primary">ver más</button>
+      </div>
+    </div>
+    
+</div>
+<button (click)="aumentarPokemon()" class="btn btn-secondary mb-5">Ver mas pokemones</button>
+
+</div>
+</div>
+
